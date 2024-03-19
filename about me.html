@@ -1,29 +1,89 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aysars CV</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="banner">
-        <div class="navbar">
-            <img src="Lgo.jpg" class="logo" height="50">
+    <div class="sidebar" id="sidebar">
+        <div class="toggle-handle" onclick="toggleSidebar()"></div>
+        <nav>
             <ul>
-                <li> <a href="index.html">hem</a> </li>
-                <li> <a href="skills.html">kunskaper</a> </li>
-                <li> <a href="experience.html">erfarenhet</a> </li>
-                <li> <a href="portfolio.html">portfolio</a> </li>
-                <li> <a href="about me.html">om mig</a> </li>
+                <li><a href="#about" onclick="selectTab('about')">About</a></li>
+                <li><a href="#services" onclick="selectTab('services')">Services</a></li>
+                <li><a href="#contact" onclick="selectTab('contact')">Contact</a></li>
             </ul>
-
+        </nav>
     </div>
-    <div class="content">
-        <h1>Om Mig</h1>
-        <p>Har blivit tillsagd att jag är en av de mest hårt
-            arbetande anställda de haft i willys av min 
-            kassaledare<br> och slog årsrekordet för mest sålt i 
-            Cigoteket under min period där.</p>
+    <div class="content" id="content">
+        <div class="banner">
+            <!-- Centered content container -->
+            <div class="centered-content">
+                <h1>Varför du borde anställa mig?</h1>
+                <p>Om du letar efter en un programerare med kunskap 
+                  inom HTML, CSS, C# och PHP så borde du trycka på knappen nedan</p>
+                <div>
+                    <button type="button" onclick="scrollToSection('about')"><span></span>Tryck här</button>
+                </div>
+            </div>
+            <div class="navbar">
+                <img src="Lgo.jpg" class="logo" height="50">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about me.html">About Me</a></li>
+                </ul>
+            </div>
         </div>
+        <div class="main-content">
+            <section id="about" class="animated-section">
+                <h2>About Us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed dolor eget lacus egestas porttitor nec a dolor.</p>
+            </section>
+            
+            <section id="services" class="animated-section">
+                <h2>Services Offered</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas interdum semper magna, vitae tincidunt turpis molestie vitae.</p>
+            </section>
+            
+            <section id="contact" class="animated-section">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us today!</p>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("active");
+            document.getElementById("content").classList.toggle("content-shift");
+        }
+
+        function selectTab(sectionId) {
+            const sections = document.querySelectorAll('.animated-section');
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.classList.add('selected');
+                } else {
+                    section.classList.remove('selected');
+                }
+            });
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const sidebar = document.getElementById("sidebar");
+            const content = document.getElementById("content");
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+                sidebar.classList.add("active");
+                content.classList.add("content-shift");
+            }
+        }
+    </script>
 </body>
-</html
+</html>
