@@ -1,41 +1,109 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="sv">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aysars CV</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="banner">
-        <div class="navbar">
-            <img src="Lgo.jpg" class="logo" height="50">
+    <div class="sidebar" id="sidebar">
+        <div class="toggle-handle" onclick="toggleSidebar()"></div>
+        <nav>
             <ul>
-                <li> <a href="index.html">hem</a> </li>
-                <li> <a href="skills.html">kunskaper</a> </li>
-                <li> <a href="experience.html">erfarenhet</a> </li>
-                <li> <a href="portfolio.html">portfolio</a> </li>
-                <li> <a href="about me.html">om mig</a> </li>
+                <li><a href="#about" onclick="selectTab('about')">About</a></li>
+                <li><a href="#services" onclick="selectTab('services')">Services</a></li>
+                <li><a href="#contact" onclick="selectTab('contact')">Contact</a></li>
             </ul>
-
+        </nav>
     </div>
-    <div class="content">
-        <h1>Erfarenhet</h1>
-        <p> <ul>Willys, Rissne – Vikariats Kassör
-            September 2023 – Januari 2024
-            Som anställd hos Willys hanterade jag sortering av varor, kassan, kundservice och svinna produkter.
-            Jag utvecklade även en förmåga att arbeta i teams, problemhantering och tids hantering.
-            Phatloot Studio, Distans arbete<br>– Social Media Advisor
-            Oktober 2021 – Augusti 2022
-            Som Social Media Advisor ansvarade jag för utveckling och genomförande av våra sociala mediestrategier, där jag aktivt arbetade med att förstå och anpassa mig till sociala medier algoritmer för att optimera vår närvaro och öka engagemanget. Genom strategisk planering och analys identifierade jag framgångsrika metoder för att öka synligheten och interaktionen på våra plattformar.
-            En av mina nyckelroller var att skapa och underhålla starka relationer med potentiella investerare och partners. Jag tog initiativ att initiera och förvalta dialogen med potentiella investerare och affärspartners för att etablera ömsesidigt gynnsamma förbindelser. Genom att demonstrera en tydlig förståelse för deras behov och affärsutmaningar kunde jag skapa och stärka långsiktiga partnerskap.
-            Min insats resulterade i strategiska allianser, vilket inte bara stärkte organisationens kapital grund utan också ökade vår räckvidd och påverkan inom den digitala sfären.
-            Cigoteket, Tekniska Högskolan – kassör
-            December 2020 – Oktober 202021
-            Ansvarig för att ta emot beställningar.
-            Skötte inventeringen av lager biståndet och hjälpte till med att uppdatera systemet.
-            Arbetade tillsammans med butikschefen för att säkerställa att lagar beståndet matchar butikens behov.
-            Erfarenhet av att ta emot varuleveranser och sortera varor.
-            </ul></p>
+    <div class="content" id="content">
+        <div class="banner">
+            <!-- Centered content container -->
+            <div class="centered-content">
+                <h1>Varför du borde anställa mig?</h1>
+                <h4>Om du letar efter en programerare med kunskap 
+                  inom HTML, CSS, C# eller PHP?</h4>
+                <div>
+                    <button type="button" onclick="scrollToSection('about')"><span></span>Tryck här</button>
+                </div>
+            </div>
+            <div class="navbar">
+                <img src="Lgo.jpg" class="logo" height="50">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </div>
         </div>
+        <div class="main-content">
+            <section id="about" class="animated-section">
+                <h2>Willys, Rissne</h2> <p class="bold">Vikariat, September 2023 – Januari 2024</p>
+                <p>Som Vikariat hos Willys hanterade jag sortering av varor, kassan, kundservice och svinna produkter. Jag utvecklade även en förmåga att arbeta i teams, problemhantering och tids hantering.
+                </p>
+            </section>
+            
+            <section id="services" class="animated-section">
+                <h2>Phatloot Studio, Distans arbete</h2> 
+                <p class="bold"> Social Media Advisor, Oktober 2021 – Augusti 2022</p>
+                    <p>
+                    Som Social Media rådgivare ansvarade jag för utveckling och genomförande av våra sociala mediestrategier. Jag arbetade aktivt med
+                    att förstå och anpassa mig till sociala medier algoritmer för att optimera vår närvaro och öka engagemanget på sociala medier.</p>
+                    <p>
+                    Genom strategisk planering och analys identifierade jag framgångsrika metoder för att öka synligheten och interaktionen på våra plattformar.
+                    En av mina nyckelroller var att skapa och underhålla starka relationer med potentiella investerare och partners. 
+                    Jag tog initiativ att initiera och förvalta dialogen med potentiella investerare och affärspartners för att etablera
+                    ömsesidigt gynnsamma förbindelser. Genom att demonstrera en tydlig förståelse för deras behov och affärsutmaningar
+                    kunde jag skapa och stärka långsiktiga partnerskap. Min insats resulterade i strategiska allianser, vilket inte bara 
+                    stärkte organisationens kapital grund utan också ökade vår räckvidd och påverkan inom den digitala sfären.</p>
+            </section>
+            
+            <section id="contact" class="animated-section">
+                <h2>Cigoteket, Tekniska Högskolan</h2>
+                <p class="bold">kassör,
+                    December 2020 – Oktober 202021</p>
+                <p>  Som anställd hos Cigoteket tog jag emot beställningar,
+                    Skötte inventeringen av lager biståndet och hjälpte till med att uppdatera systemet.
+                    Jag samarbetade även med butikschefen för att säkerställa att lagar beståndet matchar butikens behov. </p>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("active");
+            document.getElementById("content").classList.toggle("content-shift");
+        }
+
+        function selectTab(sectionId) {
+            const sections = document.querySelectorAll('.animated-section');
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.classList.add('selected');
+                } else {
+                    section.classList.remove('selected');
+                }
+            });
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const sidebar = document.getElementById("sidebar");
+            const content = document.getElementById("content");
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+                sidebar.classList.add("active");
+                content.classList.add("content-shift");
+            }
+        }
+    </script>
 </body>
-</html
+</html>

@@ -1,0 +1,195 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -120px;
+  width: 120px;
+  height: 100%;
+  background-color: #009688;
+  color: #fff;
+  transition: left 0.3s ease;
+}
+
+.toggle-handle {
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  width: 20px;
+  height: 30px;
+  background-color:#009688;
+  cursor: pointer;
+  z-index: 1000;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.toggle-handle:before {
+  content: '';
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+}
+
+.sidebar.active .toggle-handle:before {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+}
+
+.content {
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+
+.banner {
+  background-image: linear-gradient(rgba(78, 72, 72, 0.75), rgba(117, 51, 51, 0.75)), url(Yugi_muto.webp);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #009688;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 10;
+  margin: 0;
+  font-weight: 700;
+  width: 100%;
+}
+
+.navbar ul li {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+.sidebar ul li {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  margin-left: -15%;
+  margin-top: 200px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+section {
+  margin-top: 50px; 
+  padding: 20px;
+  transition: padding 0.3s ease; 
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.toggle-handle {
+  transition: left 0.3s ease;
+}
+
+.content-shift {
+  margin-left: 120px;
+}
+
+.selected h2 {
+  font-size: 1.8em;
+  transform: translateX(5px);
+  transition: font-size 0.3s ease, transform 0.3s ease;
+}
+
+.banner {
+    position: relative;
+}
+
+.centered-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.centered-content h1 {
+    font-size: 2em;
+}
+button{
+  width: 200px;
+  padding: 15px 0px;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-size: large;
+  border: 2px solid #009688;
+  background:transparent;
+  color: #ffff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+span{
+  background: #009688;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+button:hover span{
+  width: 100%;
+}
+button:hover{
+  border: none;
+}
+.bold{
+  font-weight: bold;
+}
+.logo {
+  height: 50px; 
+  margin-right: 20px}
