@@ -1,43 +1,50 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aysars CV</title>
-    <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aysars CV</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="sidebar" id="sidebar">
-        <div class="toggle-handle" onclick="toggleSidebar()"></div>
-        <nav>
-            <ul>
-                <li><a href="#about" onclick="selectTab('about')">x</a></li>
-                <li><a href="#services" onclick="selectTab('services')">x</a></li>
-                <li><a href="#contact" onclick="selectTab('contact')">x</a></li>
-            </ul>
-        </nav>
-    </div>
+    <script src="myscript.js"></script>
     <div class="content" id="content">
         <div class="banner">
+            <div class="sidebar" id="sidebar">
+                <div class="toggle-handle" onclick="toggleSidebar()"></div>
+                <nav>
+                    <ul>
+                        <li><a href="#about" onclick="selectTab('about')">Om mig.</a></li>
+                        <li><a href="#services" onclick="selectTab('services')">Varför Mig?</a></li>
+                        <li><a href="#contact" onclick="selectTab('contact')">Intreserad?</a></li>
+                        <li><a href="#footer" onclick="selectTab('footer')">Social Media</a></li>
+                    </ul>
+                </nav>
+            </div>
             <!-- Centered content container -->
             <div class="centered-content">
-                <h1>Varför du borde anställa mig?</h1>
-                <h4>Om du letar efter en programerare med kunskap 
-                  inom HTML, CSS, C# eller PHP?</h4>
+                <h1>Mina projekt</h1>
+                <h4>För att se vad jag gjort</h4>
                 <div>
-                    <button type="button" onclick="scrollToSection('about')"><span></span>Tryck här</button>
+                    <button type="button" onclick="scrollToSection('about')"><span class="special"></span>Tryck här</button>
                 </div>
             </div>
-            <div class="navbar">
-                <img src="Lgo.jpg" class="logo" height="50">
-                <ul>
-                    <li><a href="index.html">Hem</a></li>
-                    <li><a href="skills.html">Relevanta kunskaper</a></li>
-                    <li><a href="experience.html">Erfarenheter</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                </ul>
+            <div id="main_nav" class="w3-bar w3-black">
+                <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+                <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HEM</a>
+                <a href="skills.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Relevanta kunskaper</a>
+                <a href="experience.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Erfarenheter</a>
+                <a href="portfolio.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Portfolio</a>
             </div>
         </div>
+        <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+            <a href="index.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Hem</a>
+            <a href="skills.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Relevanta kunskaper</a>
+            <a href="experience.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Erfarengeter</a>
+            <a href="portfolio.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Portfolio</a>
+          </div>
         <div class="main-content">
             <section id="about" class="animated-section">
                 <h2>Vem är jag?</h2>
@@ -57,41 +64,12 @@
                 <p>Om du finner detta intresant </p>
             </section>
         </div>
+    <footer id="footer" class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+        <a href="mailto:Aysar.AL-Mudhaffar@gmail.com" class="fa fa-envelope w3-hover-opacity"></a>
+        <a href="https://github.com/gyfrtt" target="_blank" class="fa fa-github w3-hover-opacity"></a>
+        <a href="https://www.linkedin.com/in/aysar-almudhaffar-662b7a22b/" target="_blank" class="fa fa-linkedin w3-hover-opacity"></a>
+        <p>Relevanta länkar</p>
+      </footer>
     </div>
-
-    <script>
-        function toggleSidebar() {
-            document.getElementById("sidebar").classList.toggle("active");
-            document.getElementById("content").classList.toggle("content-shift");
-        }
-
-        function selectTab(sectionId) {
-            const sections = document.querySelectorAll('.animated-section');
-            sections.forEach(section => {
-                if (section.id === sectionId) {
-                    section.classList.add('selected');
-                } else {
-                    section.classList.remove('selected');
-                }
-            });
-        }
-
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            const sidebar = document.getElementById("sidebar");
-            const content = document.getElementById("content");
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-                sidebar.classList.add("active");
-                content.classList.add("content-shift");
-            }
-        }
-    </script>
 </body>
 </html>

@@ -10,9 +10,8 @@ body, html {
   left: -120px;
   width: 120px;
   height: 100%;
-  background-color: #009688;
+  background-color: #000000;
   color: #fff;
-  transition: left 0.3s ease;
 }
 
 .toggle-handle {
@@ -21,7 +20,7 @@ body, html {
   right: -10px;
   width: 20px;
   height: 30px;
-  background-color:#009688;
+  background-color:#000000;
   cursor: pointer;
   z-index: 1000;
   transform: translateY(-50%);
@@ -29,6 +28,7 @@ body, html {
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  z-index: -1;
 }
 
 .toggle-handle:before {
@@ -50,7 +50,7 @@ body, html {
 
 .content {
   margin-left: 0;
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.2s ease;
 }
 
 .banner {
@@ -60,45 +60,19 @@ body, html {
   height: 100vh;
   position: relative;
 }
-
-.navbar {
+#main_nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #009688;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
   z-index: 999;
 }
 
-.navbar ul {
-  list-style: none;
-  padding: 10;
-  margin: 0;
-  font-weight: 700;
-  width: 100%;
-}
-
-.navbar ul li {
-  display: inline-block;
-  margin-right: 25px;
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-}
 
 .sidebar ul li {
   text-decoration: none;
   color: white;
   text-transform: uppercase;
-  margin-left: -15%;
-  margin-top: 200px;
+  margin-left: -40%;
+  margin-top: 50px;
+
 }
 
 .sidebar ul li a {
@@ -112,13 +86,13 @@ body, html {
 }
 
 section {
-  margin-top: 50px; 
-  padding: 20px;
+  margin-top: 20px; 
+  padding: 12px;
   transition: padding 0.3s ease; 
 }
 
 section h2 {
-  margin-top: 0;
+  margin-top: 50px;
 }
 
 .sidebar.active {
@@ -134,13 +108,31 @@ section h2 {
 }
 
 .selected h2 {
-  font-size: 1.8em;
+  font-size: 3em;
+  transform: translateX(5px);
+  transition: font-size 0.3s ease, transform 0.3s ease;
+}
+.section p, .animated-section p { 
+  font-size: 1em;
+  transition: font-size 0.3s ease;
+}
+.selected p{
+  font-size: 1.2em;
+  transform: translateX(5px);
+  transition: font-size 0.3s ease, transform 0.3s ease;
+}
+.section ul li, .animated-section ul li { 
+  font-size: 1em;
+  transition: font-size 0.3s ease;
+}
+.selected ul li{
+  font-size: 1.2em;
   transform: translateX(5px);
   transition: font-size 0.3s ease, transform 0.3s ease;
 }
 
 .banner {
-    position: relative;
+    position:relative;
 }
 
 .centered-content {
@@ -151,11 +143,9 @@ section h2 {
     text-align: center;
     color: white;
     z-index: 1;
+    font-size: 0.5;
 }
 
-.centered-content h1 {
-    font-size: 2em;
-}
 button{
   width: 200px;
   padding: 15px 0px;
@@ -163,26 +153,29 @@ button{
   margin: 20px 10px;
   border-radius: 25px;
   font-size: large;
-  border: 2px solid #009688;
+  border: 2px solid #ffffff;
   background:transparent;
   color: #ffff;
   cursor: pointer;
   position: relative;
   overflow: hidden;
 }
-span{
-  background: #009688;
-  height: 100%;
-  width: 0;
+.special {
+  background: #000000;
+  width: 0px;
+  height: 50%;
   border-radius: 25px;
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 10px;
   z-index: -1;
-  transition: 0.5s;
+  transition: 0.2s;
 }
-button:hover span{
+button:hover .special{
   width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  bottom: 0;
 }
 button:hover{
   border: none;
@@ -193,3 +186,6 @@ button:hover{
 .logo {
   height: 50px; 
   margin-right: 20px}
+.centered-content h1{
+  font-weight: 700;
+}
