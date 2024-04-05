@@ -54,7 +54,7 @@ body, html {
 }
 
 .banner {
-  background-image: linear-gradient(rgba(78, 72, 72, 0.75), rgba(117, 51, 51, 0.75)), url(Yugi_muto.webp);
+  background-image: linear-gradient(rgba(78, 72, 72, 0.75), rgba(117, 51, 51, 0.75)), url(CV_Bild.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;
