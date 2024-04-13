@@ -54,7 +54,7 @@ body, html {
 }
 
 .banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(126, 120, 120, 0.75)), url(CV_Bild.jpg);
+  background-image: linear-gradient(rgba(68, 194, 233, 0.75), rgba(16, 44, 77, 0.75)), url(CV_Bild.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;
